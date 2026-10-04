@@ -1,62 +1,72 @@
 import { motion } from "motion/react";
-import { Server, Layout, Database, Workflow, Cpu, ShieldCheck } from "lucide-react";
+import { Code2, Network, Database, Cloud, ShieldCheck, Activity, Bot, Users } from "lucide-react";
 import { SectionHeading } from "./SectionHeading";
 
 const skillGroups = [
   {
-    category: "Backend Architecture",
-    icon: <Server className="text-indigo-500" />,
-    skills: ["Node.js", "Express.js", "NestJS", "Microservices", "RESTful APIs", "Python", "TurboNode"]
+    category: "Languages & Frameworks",
+    icon: <Code2 className="text-indigo-500" />,
+    skills: ["Node.js", "Express.js", "TypeScript", "JavaScript", "Python", "ReactJS", "HTML5", "CSS3"]
   },
   {
-    category: "Frontend Excellence",
-    icon: <Layout className="text-brand-primary" />,
-    skills: ["ReactJS", "TypeScript", "Angular", "Next.js", "HTML5/CSS3", "Tailwind CSS", "Redux"]
+    category: "Architecture",
+    icon: <Network className="text-brand-primary" />,
+    skills: ["Microservices", "RESTful API Design", "System Design", "Dependency Injection", "Message Queues (AWS SQS)"]
   },
   {
-    category: "Data Strategy",
+    category: "Databases & Caching",
     icon: <Database className="text-emerald-500" />,
-    skills: ["PostgreSQL (Query Optimization)", "MySQL", "MongoDB", "Redis (Caching)", "Prisma", "Elasticsearch"]
+    skills: ["PostgreSQL (query & index optimization)", "MySQL", "MongoDB", "Redis"]
   },
   {
-    category: "DevOps & Scale",
-    icon: <Workflow className="text-blue-500" />,
-    skills: ["AWS (EC2, S3, Lambda, RDS)", "Docker", "CI/CD Pipelines", "Jenkins", "GitHub Actions", "Kubernetes"]
+    category: "Cloud & DevOps",
+    icon: <Cloud className="text-blue-500" />,
+    skills: ["AWS (EC2, S3, Lambda, RDS, API Gateway, SQS)", "Docker", "CI/CD (Git, Jenkins)"]
   },
   {
-    category: "Quality Auditing",
+    category: "Testing & Quality",
     icon: <ShieldCheck className="text-orange-500" />,
-    skills: ["Jest", "Jasmine", "Unit Testing", "Integration Testing", "TDD", "Code Reviews"]
+    skills: ["Jest", "Unit & Integration Testing", "Test-Driven Development", "Code Review"]
   },
   {
     category: "Observability",
-    icon: <Cpu className="text-purple-500" />,
-    skills: ["Apache SkyWalking", "Sentry", "Metabase", "Advanced Debugging", "Technical Mentoring"]
+    icon: <Activity className="text-purple-500" />,
+    skills: ["Apache SkyWalking", "Sentry", "Metabase"]
+  },
+  {
+    category: "AI-Assisted Development",
+    icon: <Bot className="text-pink-500" />,
+    skills: ["Claude Code", "GitHub Copilot", "AWS Kiro", "MCP (Model Context Protocol)"]
+  },
+  {
+    category: "Leadership",
+    icon: <Users className="text-teal-500" />,
+    skills: ["Team Leadership (3 engineers)", "Technical Mentoring", "Agile/Scrum", "SDLC"]
   }
 ];
 
 export const Skills = () => {
   return (
     <section id="skills" className="py-32 px-6 max-w-7xl mx-auto">
-      <SectionHeading title="Technical Versatility." subtitle="The Architecture" />
-      
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <SectionHeading title="Skills & Tools." subtitle="The Toolkit" />
+
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
         {skillGroups.map((group, i) => (
           <motion.div
             key={group.category}
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: i * 0.1 }}
+            transition={{ delay: i * 0.08 }}
             className="p-8 glass rounded-3xl hover:border-brand-primary transition-all group"
           >
-            <div className="w-14 h-14 rounded-2xl bg-white/5 dark:bg-white/5 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+            <div className="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
               {group.icon}
             </div>
-            <h3 className="font-display text-2xl font-bold uppercase mb-6">{group.category}</h3>
+            <h3 className="font-display text-xl font-bold uppercase mb-6">{group.category}</h3>
             <div className="flex flex-wrap gap-2">
               {group.skills.map(skill => (
-                <span key={skill} className="px-3 py-1 bg-white/5 dark:bg-white/5 border border-white/10 rounded-lg text-[10px] font-bold uppercase tracking-wider text-text-light-secondary dark:text-text-dark-secondary">
+                <span key={skill} className="px-3 py-1 bg-white/5 border border-white/10 rounded-lg text-[10px] font-bold uppercase tracking-wider text-text-light-secondary dark:text-text-dark-secondary">
                   {skill}
                 </span>
               ))}

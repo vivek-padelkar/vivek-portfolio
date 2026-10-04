@@ -1,20 +1,26 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# Vivek Padelkar – Portfolio
 
-# Run and deploy your AI Studio app
+Personal portfolio built with React, TypeScript, Tailwind CSS and Vite.
 
-This contains everything you need to run your app locally.
+## Run locally
 
-View your app in AI Studio: https://ai.studio/apps/cc0f9174-b884-48db-8b39-5aa9c926e234
+```bash
+npm install
+npm run dev      # http://localhost:3000
+```
 
-## Run Locally
+## Build
 
-**Prerequisites:**  Node.js
+```bash
+npm run build    # outputs to dist/
+npm run preview  # preview the production build
+```
 
+## Deploy (Vercel)
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+Import the repo in Vercel. Framework preset: **Vite**, build command `npm run build`, output directory `dist`. No environment variables are required.
+
+## Updating content
+
+- Section content lives in `src/components/` (Hero, About, Skills, Projects, Experience, Contact).
+- The downloadable CV is `public/Vivek_Padelkar_Resume.pdf`. Replace the file, keeping the name, to update it.
